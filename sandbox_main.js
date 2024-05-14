@@ -6,7 +6,11 @@ var Engine = Matter.Engine,
 var engine = Engine.create();
 var render = Render.create({
     element: document.body,
-    engine: engine
+    engine: engine,
+    options: {
+        wireframes: false,
+        background: '#0000FF'
+    }
 });
 render.options.background = '#FFFFFF';
 render.canvas.width = 900;
@@ -26,7 +30,6 @@ let size = document.getElementById("sizething").value;
 let wsize = document.getElementById("widththing").value;
 let hsize = document.getElementById("heightthing").value;
 let sizeon = document.getElementById("sizeenabled").value;
-let abg = document.getElementById("abg").value;
 var moonOn = false;
 var reverseOn = false;
 function makeBox() {
@@ -37,10 +40,8 @@ function makeBox() {
     console.log(size, sizeon, wsize, hsize)
     if (sizeon === "on") {
         var box = Bodies.rectangle(400, 200, size, size);
-        box.isStatic = abg;
     } else {
         var box = Bodies.rectangle(400, 200, wsize, hsize);
-        box.isStatic = abg;
     }
     Composite.add(engine.world, [box]);
 }
@@ -91,14 +92,6 @@ function reverseToggle() {
             engine.world.gravity.y = 1;
             reverseOn = true;
         }
-    }
-}
-function startRemove() {
-    while (true) {
-        if (mouseConstraint.bodyA) {
-            Matter.Composite.remove(engine.world, mouseConstraint.bodyA);
-        }
-        break;
     }
 }
 let starterbox = Bodies.rectangle(400, 200, 30, 89, { isStatic: false });
