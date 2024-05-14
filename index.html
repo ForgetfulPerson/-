@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <title>awesome sandbox sim!!!</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+            body {
+                background-color: rgb(68, 68, 68);
+                font-family: 'Roboto Mono', monospace;
+            }
+            button {
+                font-family: "Dela Gothic One";
+                font-size: 20px;
+                text-align: center;
+                height: 60px;
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 0, 0, 1) 0%,
+                    rgba(255, 154, 0, 1) 10%,
+                    rgba(208, 222, 33, 1) 20%,
+                    rgba(79, 220, 74, 1) 30%,
+                    rgba(63, 218, 216, 1) 40%,
+                    rgba(47, 201, 226, 1) 50%,
+                    rgba(28, 127, 238, 1) 60%,
+                    rgba(95, 21, 242, 1) 70%,
+                    rgba(186, 12, 248, 1) 80%,
+                    rgba(251, 7, 217, 1) 90%,
+                    rgba(255, 0, 0, 1) 100%
+                );
+            }
+            .boxpreviewcss {
+                width: 100px;
+                height: 100px;
+                background-color: white;
+            }
+            h2 {
+                background-color: aqua;
+            }
+            h1 {
+                background: linear-gradient(
+                    90deg,
+                    rgba(255, 0, 0, 1) 0%,
+                    rgba(255, 154, 0, 1) 10%,
+                    rgba(208, 222, 33, 1) 20%,
+                    rgba(79, 220, 74, 1) 30%,
+                    rgba(63, 218, 216, 1) 40%,
+                    rgba(47, 201, 226, 1) 50%,
+                    rgba(28, 127, 238, 1) 60%,
+                    rgba(95, 21, 242, 1) 70%,
+                    rgba(186, 12, 248, 1) 80%,
+                    rgba(251, 7, 217, 1) 90%,
+                    rgba(255, 0, 0, 1) 100%
+                );
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                font-family: Arial;
+                font-size: 300%;
+            }
+            input {
+                border-width: 3px;
+                border-color: black;
+                border-radius: 15px;
+            }
+            marquee {
+                font-family: "Dela Gothic One";
+                font-size: 20px;
+                color: red;
+                background-color: blue;
+            }
+            h3 {
+                font-family: "Arial";
+                font-size: 20px;
+                color: red;
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <script src="matter.js"></script>
+
+        <h1>AWESOME SANDBOX</h1>
+        <marquee scrollamount="25">NOTE: the width and height feature is only available for the boxes.</marquee>
+        <br><h2>Object Menu</h2>
+        <br><button onclick="makeBox()">gimme box yay</button>
+        <button onclick="makeCirc()">give funny ball</button>
+        <button onclick="makeTri()">spawn pointy thing</button>
+        <button onclick="startRemove()">toggle removing objects</button>
+        <button onclick="clearAll()">clear all</button>
+        <br><br><form><input type="radio" id="sizeenabled" name="objtype"> <input type="number" id="sizething" placeholder="size" min="0">
+        <br><input type="radio" name="objtype"> <input type="number" id="widththing" placeholder="width" min="0"> <input type="number" id="heightthing" placeholder="height" min="0">
+        <br><div style="display: flex;"><input type="radio" name="abg" id="abg"> <h3>affected by gravity? <u>DEFAULT: no</u></h3></div></form>
+        <br><h2>Simulation Menu</h2>
+        <br><button onclick="pauseSim()">pause simulation</button>
+        <button onclick="resumeSim()">resume simulation</button>
+        <button onclick="moonToggle()">toggle moon gravity</button>
+        <button onclick="reverseToggle()">toggle reverse gravity</button>
+        <br><br>
+
+        <script src="sandbox_main.js"></script>
+    </body>
+</html>
